@@ -1,0 +1,16 @@
+{
+    "Debug" : true,
+    "LogFile" : "./nogit/dtls2ipfix.log",
+    "LocalAddress" : "0.0.0.0",
+    "LocalPort" : 9999,
+    "ServerCertKey" : "./nogit/certs/key.pem",
+    "ServerCert" : "./nogit/certs/cert.pem",
+    "ServerCa" : "./notgit/certs/ca.pem",
+    "StatsFile" : "./nogit/dtls2ipfix.stats",
+    "StatsUpdateInterval" : "10s",
+    "Forwarders" : 
+    [
+        { "Address" : "144.254.12.200", "Port" : 10000 }, 
+        { "Address" : "144.254.12.200", "Port" : 10001 }
+    ]
+}
