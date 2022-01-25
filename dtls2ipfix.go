@@ -7,6 +7,7 @@ import (
     "github.com/jfdive/dtls2ipfix/logging"
     "github.com/jfdive/dtls2ipfix/config"
     "github.com/jfdive/dtls2ipfix/stats"
+    "github.com/jfdive/dtls2ipfix/server"
 )
 
 func main() {
@@ -45,6 +46,20 @@ func main() {
 
     /* init stats */
     err = stats.Init()
+    if err != nil {
+        logging.Log.Error(err)
+        os.Exit(1)
+    }
+
+    /* init server */
+    err = server.Init()
+    if err != nil {
+        logging.Log.Error(err)
+        os.Exit(1)
+    }
+
+    /* go for it */
+    err = server.Run()
     if err != nil {
         logging.Log.Error(err)
         os.Exit(1)
